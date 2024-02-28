@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..500;1,300..500&display=swap');
+
 :root {
   --color-very-dark-blue: #0f1424;
   --color-dark-blue: #1c1f4a;
@@ -45,13 +47,29 @@
   
   body {
     font-size: 1.6rem;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Rubik", sans-serif;
   }
   
   /* End CSS Reset */
 
   .container {
     display: grid;
+    min-width: 100vh;
+    grid-template-columns: repeat(4, 20rem);
+    gap: var(--default-padding);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(.1rem);
+    }
+  }
+
+  .card {
+    z-index: 1;
+    background-color: var(--color-dark-blue);
   }
 
   .pic {
@@ -59,4 +77,27 @@
     width: 10rem;
     border-radius: 50%;
     border: 0.2rem solid #fff;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .icons {
+    display: flex;
+    gap: 0.5rem
+  }
+
+  .row {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+    align-items: center;
   }

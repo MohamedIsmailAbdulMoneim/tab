@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..500;1,300..500&display=swap");
 :root {
   --color-very-dark-blue: #0f1424;
   --color-dark-blue: #1c1f4a;
@@ -44,24 +45,56 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Courier New", Courier, monospace;
-  color: var(--color-white);
+  font-family: "Rubik", sans-serif;
 }
 
 /* End CSS Reset */
 .container {
   display: grid;
-  background-color: #e5e5f7;
-  opacity: 0.8;
-  background-size: 4px 4px;
-  background-image: repeating-linear-gradient(45deg, #74758d 0, #74758d 0.4px, #e5e5f7 0, #e5e5f7 50%);
+  min-width: 100vh;
+  grid-template-columns: repeat(4, 20rem);
+  gap: var(--default-padding);
+}
+.container::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
+}
+
+.card {
+  z-index: 1;
+  background-color: var(--color-dark-blue);
 }
 
 .pic {
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
-  border: 0.2rem solid var(--color-white);
+  border: 0.2rem solid #fff;
 }
 
-/*# sourceMappingURL=style.css.map */
+.button {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
